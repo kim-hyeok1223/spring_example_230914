@@ -1,5 +1,23 @@
 package com.example.lesson02;
 
-public class Lesson02Ex01RestController {
+import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.lesson02.bo.UsedGoodsBO;
+import com.example.lesson02.domain.UsedGoods;
+
+@RestController
+public class Lesson02Ex01RestController {
+	
+	@Autowired // DI : 스피링 빈 주입
+	private UsedGoodsBO usedGoodsBO;
+	
+	// url : http://localhost/lesson02/ex01
+	@RequestMapping("/lesson02/ex01") // request
+	public List<UsedGoods> ex01() {
+		return usedGoodsBO.getUsedGoodsList(); // response => json
+	}
 }
