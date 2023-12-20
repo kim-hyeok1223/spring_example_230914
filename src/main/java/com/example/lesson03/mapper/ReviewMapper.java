@@ -23,4 +23,7 @@ public interface ReviewMapper {
 								@Param("review") String review);
 	
 	public int updateReviewById(@Param("id") int id, @Param("review") String review);
+	
+	// input : id    output : 삭제한 행의 개수
+	public int deleteReviewById(int id);
 }
