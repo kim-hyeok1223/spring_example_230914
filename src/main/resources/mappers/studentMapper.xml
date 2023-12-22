@@ -26,4 +26,17 @@
 		
 	</insert>
 
+	<select id="selectStudentById" parameterType="int" resultType="com.example.lesson04.domain.Student">
+	SELECT
+		`name`
+		`phoneNumber`
+		`email`
+		`dreamJob`
+		`createdAt`
+		`updatedAt`
+	FROM
+		`new_student`
+	WHERE
+		`id`= #{id}
+	</select>
 </mapper>	
